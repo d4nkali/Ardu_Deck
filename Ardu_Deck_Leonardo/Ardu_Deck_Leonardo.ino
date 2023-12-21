@@ -70,7 +70,21 @@ void setup() {
 
 void loop() {
 
+    if (digitalRead(botao_1) == LOW) {  // Se o botão estiver pressionado, então:
+  
+    delay(150);  // Aguarda um curto período para evitar debounce
+    digitalWrite(led, HIGH); // Liga o led  
+    
+    Keyboard.press(KEY_LEFT_SHIFT); // Pressiona a tecla Shift
+    Keyboard.press(KEY_LEFT_CTRL); // Pressiona a tecla Ctrl
+    Keyboard.press(KEY_ESC); // Pressiona a tecla Esc
+    delay(100); // Aguarda um tempo para soltar as teclas
+    Keyboard.releaseAll(); // Solta todas as teclas
+    
+    delay(3000); // Aguarda um tempo para o Gerenciador de tarefas aparecer
+    digitalWrite(led, LOW); // Desliga o led
 
+  }
 
 }
 
