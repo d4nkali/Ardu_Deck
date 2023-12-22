@@ -5,7 +5,7 @@
 
 */
 
-// Inclusão das bibliotecas
+// Inclusão da biblioteca
 
   #include <HID-Project.h>
 
@@ -214,7 +214,20 @@ void loop() {
     
     }
 
-  //
+  // Controle de volume 
+
+    // Silenciar o Volume
+
+    if (digitalRead(botao_mute) == LOW) { // Se o botão de mudo for precionado, então:
+
+      Consumer.write(MEDIA_VOLUME_MUTE); // Emula a tecla de mudo
+      digitalWrite(LED_BUILTIN, HIGH);  // Liga o led
+      delay(500); // Aguarda 0,5 s
+      digitalWrite(LED_BUILTIN, LOW); // Desliga o led
+
+    }
+
+  // 
 
 }
 
