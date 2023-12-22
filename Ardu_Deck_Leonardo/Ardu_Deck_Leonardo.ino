@@ -182,7 +182,39 @@ void loop() {
     
     }
 
-    // 
+    // Abrir as Configurações Gerais do PC
+
+    if (digitalRead(botao_7) == LOW) {  // Se o botão estiver pressionado, então:
+  
+      delay(150);  //Aguarda um curto período para evitar debounce
+      digitalWrite(led, HIGH); // Liga o led
+    
+      Keyboard.press(KEY_LEFT_GUI);  // Pressiona a tecla Windows/Iniciar/Super
+      Keyboard.press('i');  // Pressiona a tecla I
+      Keyboard.releaseAll();  // Solta todas as teclas
+
+      delay(2000);  // Aguarda um tempo para as configurações aparecer
+      digitalWrite(led, LOW); // Desliga o led
+    
+    }
+
+    // Abre o Menu Notificações
+
+    if (digitalRead(botao_8) == LOW) {  // Se o botão estiver pressionado, então:
+  
+      delay(150);  //Aguarda um curto período para evitar debounce
+      digitalWrite(led, HIGH); // Liga o led
+    
+      Keyboard.press(KEY_LEFT_GUI);  // Pressiona a tecla Windows/Iniciar/Super
+      Keyboard.press('n');  // Pressiona a tecla N
+      Keyboard.releaseAll();  // Solta todas as teclas
+
+      delay(2000);  // Aguarda um tempo para as notificações aparecerem
+      digitalWrite(led, LOW); // Desliga o led
+    
+    }
+
+  //
 
 }
 
