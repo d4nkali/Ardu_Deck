@@ -227,8 +227,19 @@ void loop() {
 
     }
 
-  // 
+    // Diminuir o Volume
 
+    if (digitalRead(botao_menos) == LOW) { // Se o botão de menos for precionado, então:
+
+      Consumer.write(MEDIA_VOLUME_DOWN); // Emula a tecla de abaixar o volume
+      digitalWrite(LED_BUILTIN, HIGH);  // Liga o led
+      delay(150); // Aguarda 150 ms
+      digitalWrite(LED_BUILTIN, LOW); // Desliga o led
+
+    }
+
+    // 
+    
 }
 
 // FIM!
