@@ -70,21 +70,66 @@ void setup() {
 
 void loop() {
 
+  // Executar Comandos de Teclado
+
+    // Abrir Gerenciador de tarefas
+
     if (digitalRead(botao_1) == LOW) {  // Se o botão estiver pressionado, então:
   
-    delay(150);  // Aguarda um curto período para evitar debounce
-    digitalWrite(led, HIGH); // Liga o led  
+      delay(150);  // Aguarda um curto período para evitar debounce
+      digitalWrite(led, HIGH); // Liga o led  
     
-    Keyboard.press(KEY_LEFT_SHIFT); // Pressiona a tecla Shift
-    Keyboard.press(KEY_LEFT_CTRL); // Pressiona a tecla Ctrl
-    Keyboard.press(KEY_ESC); // Pressiona a tecla Esc
-    delay(100); // Aguarda um tempo para soltar as teclas
-    Keyboard.releaseAll(); // Solta todas as teclas
+      Keyboard.press(KEY_LEFT_SHIFT); // Pressiona a tecla Shift
+      Keyboard.press(KEY_LEFT_CTRL); // Pressiona a tecla Ctrl
+      Keyboard.press(KEY_ESC); // Pressiona a tecla Esc
+      delay(100); // Aguarda um tempo para soltar as teclas
+      Keyboard.releaseAll(); // Solta todas as teclas
     
-    delay(3000); // Aguarda um tempo para o Gerenciador de tarefas aparecer
-    digitalWrite(led, LOW); // Desliga o led
+      delay(3000); // Aguarda um tempo para o Gerenciador de tarefas aparecer
+      digitalWrite(led, LOW); // Desliga o led
 
-  }
+    }
+
+    // Abrir o CMD
+
+    if (digitalRead(botao_2) == LOW) {  // Se o botão estiver pressionado, então:
+  
+      delay(150);  //Aguarda um curto período para evitar debounce
+      digitalWrite(led, HIGH); // Liga o led
+    
+      Keyboard.press(KEY_LEFT_GUI);  // Pressiona a tecla Windows/Iniciar/Super
+      Keyboard.press('r');  // Pressiona a tecla R
+      Keyboard.releaseAll();  // Solta todas as teclas
+    
+      delay(2000);  // Aguarda um tempo para a janela Executar aparecer
+    
+      Keyboard.print("cmd");  // Digita "cmd" na janela Executar    
+      Keyboard.press(KEY_RETURN);  // Pressiona a tecla Enter para executar o comando
+      Keyboard.releaseAll();  // Solta todas as teclas
+        
+      delay(5000);  // Aguarda um tempo para o prompt de comando aparecer
+      digitalWrite(led, LOW); // Desliga o led
+    
+    }
+
+    // Abrir o Explorer
+
+    if (digitalRead(botao_3) == LOW) {  // Se o botão estiver pressionado, então:
+  
+      delay(150);  // Aguarda um curto período para evitar debounce
+      digitalWrite(led, HIGH); // Liga o led
+    
+      Keyboard.press(KEY_LEFT_GUI);  // Pressiona a tecla Windows/Iniciar/Super
+      Keyboard.press('e');  // Pressiona a tecla E
+      Keyboard.releaseAll();  // Solta todas as teclas
+    
+      delay(3000);  // Aguarda um tempo para a janela do Explorador aparecer
+      digitalWrite(led, LOW); // Desliga o led    
+    
+    }
+
+    // 
+
 
 }
 
