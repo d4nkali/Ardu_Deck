@@ -238,8 +238,19 @@ void loop() {
 
     }
 
-    // 
-    
+    // Aumentar Volume
+
+    if (digitalRead(botao_mais) == LOW) { // Se o botão de mais for precionado, então:
+
+      Consumer.write(MEDIA_VOLUME_UP); // Emula a tecla de aumentar o volume
+      digitalWrite(LED_BUILTIN, HIGH); // Liga o led
+      delay(150); // Aguarda 150 ms
+      digitalWrite(LED_BUILTIN, LOW); // Desliga o led
+
+    }
+
+  // 
+
 }
 
 // FIM!
