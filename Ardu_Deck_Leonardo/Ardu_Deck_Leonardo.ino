@@ -249,7 +249,20 @@ void loop() {
 
     }
 
-  // 
+  // Controle de Midia
+
+    // Botao de Voltar Midia
+
+    if (digitalWrite(botao_voltar) == LOW) {
+
+      Consumer.write(MEDIA_PREVIOUS); // Emula a tecla de voltar a midia
+      digitalWrite(LED_BUILTIN, HIGH);  // Liga o led
+      delay(500); // Aguarda 500 ms
+      digitalWrite(LED_BUILTIN, LOW); // Desliga o led
+
+    }
+
+    // 
 
 }
 
