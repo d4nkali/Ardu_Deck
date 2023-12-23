@@ -262,6 +262,17 @@ void loop() {
 
     }
 
+    // Botao de Pausar/Reproduzir Midia
+
+    if (digitalWrite(botao_pause_rep) == LOW) {
+
+      Consumer.write(MEDIA_PLAY_PAUSE); // Emula a tecla de pausar ou reproduzir a midia
+      digitalWrite(LED_BUILTIN, HIGH);  // Liga o led
+      delay(500); // Aguarda 500 ms
+      digitalWrite(LED_BUILTIN, LOW); // Desliga o led
+
+    }
+
     // 
 
 }
