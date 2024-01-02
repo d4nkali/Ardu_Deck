@@ -38,7 +38,33 @@
 
 void setup() {
 
+  pinMode(led, OUTPUT); // Configura o pino do led como saida 
 
+  // Botões dos Comandos como entrada com resistor pull-up
+
+    pinMode(botao_1, INPUT_PULLUP); 
+    pinMode(botao_2, INPUT_PULLUP); 
+    pinMode(botao_3, INPUT_PULLUP); 
+    pinMode(botao_4, INPUT_PULLUP); 
+    pinMode(botao_5, INPUT_PULLUP); 
+    pinMode(botao_6, INPUT_PULLUP); 
+    pinMode(botao_7, INPUT_PULLUP); 
+    pinMode(botao_8, INPUT_PULLUP); 
+
+  // Botões de Contorle de Volume como entrada com resistor pull-up
+  
+    pinMode(botao_mute, INPUT_PULLUP); 
+    pinMode(botao_menos, INPUT_PULLUP); 
+    pinMode(botao_mais, INPUT_PULLUP); 
+
+  // Botões de Controle de Midia como entrada com resistor pull-up
+  
+    pinMode(botao_voltar, INPUT_PULLUP); 
+    pinMode(botao_pause_rep, INPUT_PULLUP); 
+    pinMode(botao_avancar, INPUT_PULLUP); 
+
+  Keyboard.begin(); // Inicializa os componentes do teclado
+  Consumer.begin(); // Inicializa os componentes das teclas de midia
 
 }
 
