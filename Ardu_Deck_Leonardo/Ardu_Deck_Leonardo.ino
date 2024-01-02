@@ -33,8 +33,8 @@
   // Botões de Controle de Midia
 
     #define botao_voltar A0 // Define o pino analogico A0 como botao de voltar a midia do PC
-    #define botao_pause_rep A1  // Define o pino analogico A0 como botao de pausar ou reproduzir a midia do PC
-    #define botao_avancar A2  // Define o pino analogico A0 como botao de avançar a midia do PC
+    #define botao_pause_rep A1  // Define o pino analogico A1 como botao de pausar ou reproduzir a midia do PC
+    #define botao_avancar A2  // Define o pino analogico A2 como botao de avançar a midia do PC
 
 void setup() {
 
